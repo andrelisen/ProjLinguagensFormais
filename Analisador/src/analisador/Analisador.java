@@ -1,6 +1,10 @@
 
 package analisador;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
 /**
@@ -19,7 +23,7 @@ public class Analisador {
     TesteCond (teste condicional), NomeFunc (nome de função) e Num (número). 
     Se precisar de mais rótulos, identifique-os e diga o que significam.*/
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         
         Scanner ler = new Scanner(System.in);
         
@@ -29,6 +33,13 @@ public class Analisador {
         System.out.println("-------------------------------------------------------------------------");
         System.out.println("Digite o nome do arquivo que desejas ler para reconhecer:");
         nomeArquivo = ler.nextLine();
+        
+        Path caminho = Paths.get(nomeArquivo, args);
+        byte[]texto = Files.readAllBytes(caminho);
+        String leitura = new String(texto);
+        System.out.println("Eu li do arquivo o seguinte:");
+        System.out.println(leitura);
+        
         System.out.println("-------------------------------------------------------------------------");
         
         
