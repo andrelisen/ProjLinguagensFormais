@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -33,25 +34,52 @@ public class Analisador {
         int opcaoMenu = 0;
         String nomeArquivo;
         
+       // listaDeTokens tokens = new listaDeTokens();
+       
+        ArrayList<listaDeTokens> tokens = new ArrayList();
+        
         System.out.println("-------------------------------------------------------------------------");
         System.out.println("Digite o nome do arquivo que desejas ler para reconhecer:");
         nomeArquivo = ler.nextLine();
         
         Scanner scanner = new Scanner(new FileReader(new File(nomeArquivo)));
-
+        
+        String palavra="";
+        
         while (scanner.hasNext()) {
+            
+            
         	String line = scanner.nextLine();
         	String[] caract = line.split("");
+                 
+                
                 for(int i = 0; i< caract.length; i++){
                     if(caract[i].equals(" ")){
-                        System.out.println("Detectei espaço YEYY");
+                    //    System.out.println("dentro do if: "+palavra);
+                        listaDeTokens token = new listaDeTokens(palavra);
+                        tokens.add(token);
+                      //  System.out.println(palavra);
+                        palavra = "";
+                      //  System.out.println("Detectei espaço YEYY");
                     }else{
-                    System.out.println(caract[i]);
+                        palavra = palavra + "" +caract[i];
+                    //    System.out.println(palavra);
                     }
                 }
+                
         }
         
+        System.out.println("Imprimindo a lista de tokens que foi identificado!!");
         
+        int quantidade = tokens.size();
+            
+            for(int i = 0; i<quantidade; i++){
+                
+                listaDeTokens auxLer = tokens.get(i);
+                System.out.println(auxLer.getElemento());
+                System.out.println(auxLer.getRotulo());
+                
+            }
       
         System.out.println("-------------------------------------------------------------------------");
         
