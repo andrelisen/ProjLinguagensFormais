@@ -14,6 +14,24 @@ package analisador;
 public class listaDeTokens {
     
     String elemento;
+    rotulos rotulo;
+
+    public String getElemento() {
+        return elemento;
+    }
+
+    public void setElemento(String elemento) {
+        this.elemento = elemento;
+    }
+
+    public rotulos getRotulo() {
+        return rotulo;
+    }
+
+    public void setRotulo(rotulos rotulo) {
+        this.rotulo = rotulo;
+    }
+    
     
     
 }

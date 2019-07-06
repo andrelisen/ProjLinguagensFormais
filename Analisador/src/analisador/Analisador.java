@@ -1,6 +1,9 @@
 
 package analisador;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -34,12 +37,22 @@ public class Analisador {
         System.out.println("Digite o nome do arquivo que desejas ler para reconhecer:");
         nomeArquivo = ler.nextLine();
         
-        Path caminho = Paths.get(nomeArquivo, args);
-        byte[]texto = Files.readAllBytes(caminho);
-        String leitura = new String(texto);
-        System.out.println("Eu li do arquivo o seguinte:");
-        System.out.println(leitura);
+        Scanner scanner = new Scanner(new FileReader(new File(nomeArquivo)));
+
+        while (scanner.hasNext()) {
+        	String line = scanner.nextLine();
+        	String[] caract = line.split("");
+                for(int i = 0; i< caract.length; i++){
+                    if(caract[i].equals(" ")){
+                        System.out.println("Detectei espaço YEYY");
+                    }else{
+                    System.out.println(caract[i]);
+                    }
+                }
+        }
         
+        
+      
         System.out.println("-------------------------------------------------------------------------");
         
         
