@@ -12,7 +12,7 @@ package analisador;
  */
 public class parser {
     
-    public float transicao;
+    public double transicao;
     public listaDeTokens pilha;
     public listaDeTokens entrada;
     
@@ -49,7 +49,8 @@ public class parser {
                 p, if, E, p, if*/
                 
             case DelimEsq://parentese esquerdo (
-                
+                System.out.println("Parentese identificado mas o que eu faco com ele? ");
+                transicao = 1.1;
                 break;
             
             
