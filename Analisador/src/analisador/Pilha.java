@@ -23,8 +23,11 @@ public class Pilha {
     }
 
     public void imprimir(){
+        System.out.println("Pilha:");
         for (String elemento : pilha) {
-            System.out.println("Elemento " + pilha.indexOf(elemento) +": " + elemento);
+            System.out.println(elemento);
         }
+        System.out.println("-----------------");
+        System.out.println("                 ");
     }
 }
