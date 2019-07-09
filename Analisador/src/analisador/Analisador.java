@@ -34,9 +34,9 @@ public class Analisador {
         int opcaoMenu = 0;
         String nomeArquivo;
         
-       // listaDeTokens tokens = new listaDeTokens();
+       // Token tokens = new Token();
        
-        ArrayList<listaDeTokens> tokens = new ArrayList();
+        ArrayList<Token> tokens = new ArrayList();
         
         System.out.println("-------------------------------------------------------------------------");
         System.out.println("Digite o nome do arquivo que desejas ler para reconhecer:");
@@ -46,9 +46,7 @@ public class Analisador {
         
         String palavra="";
         
-        while (scanner.hasNext()) {
-            
-            
+        while (scanner.hasNext()) {          
         	String line = scanner.nextLine();
         	String[] caract = line.split("");
                  
@@ -56,7 +54,7 @@ public class Analisador {
                 for(int i = 0; i< caract.length; i++){
                     if(caract[i].equals(" ")){
                     //    System.out.println("dentro do if: "+palavra);
-                        listaDeTokens token = new listaDeTokens(palavra);
+                        Token token = new Token(palavra);
                         tokens.add(token);
                       //  System.out.println(palavra);
                         palavra = "";
@@ -75,7 +73,7 @@ public class Analisador {
             
             for(int i = 0; i<quantidade; i++){
                 
-                listaDeTokens auxLer = tokens.get(i);
+                Token auxLer = tokens.get(i);
                 System.out.println(auxLer.getElemento());
                 System.out.println(auxLer.getRotulo());
                 
@@ -84,6 +82,9 @@ public class Analisador {
         System.out.println("-------------------------------------------------------------------------");
         
         
-    }
-    
+        //analisador sintático
+        AnalisadorSintatico as = new AnalisadorSintatico();
+        as.bottomUp(tokens);
+        
+    }    
 }

@@ -1,6 +1,6 @@
 /*
 A partir da gramática alterada e dos elementos identificados no passo anterior, escreva
-um analisador sintático determinístico (parser) (top-down ou bottom-up) que reconheça
+um analisador sintático determinístico (Parser) (top-down ou bottom-up) que reconheça
 programas escritos na linguagem L e gere a lista de transições usadas no processo de
 reconhecimento.
  */
@@ -10,19 +10,19 @@ package analisador;
  *
  * @author andrelise
  */
-public class parser {
+public class Parser {
     
     public double transicao;
-    public listaDeTokens pilha;
-    public listaDeTokens entrada;
+    public Token pilha;
+    public Token entrada;
     
-    public parser(listaDeTokens token) {
+    public Parser(Token token) {
     
         
         
     }
     
-    public void identificar(listaDeTokens input){
+    public void identificar(Token input){
         
         //esse switch reconhece a entrada que no nosso caso é uma lista de tokens com todos do arq TXT, e eles estão classificados conforme a descrição
         //do projeto

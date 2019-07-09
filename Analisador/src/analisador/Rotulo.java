@@ -9,7 +9,7 @@ package analisador;
  *
  * @author andrelise
  */
-public enum rotulos {
+public enum Rotulo {
     
     DelimEsq, DelimDir, OpUn, OpBin, TesteCond, NomeFunc, Num;
     
