@@ -4,28 +4,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Pilha {
-    public List<String> pilha;
+    public List<Token> pilha;
 
     public Pilha() {
         pilha = new ArrayList();
         this.pilha.clear();
     }
     
-    public void inserir(String elemento){
+    public void inserir(Token elemento){
         this.pilha.add(elemento);
     }
     
-    public String remover(){
+    public Token remover(){
         Integer ultimo = this.pilha.size() - 1;
-        String elemento = this.pilha.get(ultimo);
+        Token elemento = this.pilha.get(ultimo);
         this.pilha.remove(elemento);
         return elemento;
     }
 
     public void imprimir(){
         System.out.println("Pilha:");
-        for (String elemento : pilha) {
-            System.out.println(elemento);
+        for (Token token : pilha) {
+            System.out.println(token.getElemento());
         }
         System.out.println("-----------------");
         System.out.println("                 ");

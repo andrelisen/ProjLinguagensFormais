@@ -1,1 +1,1 @@
-inserir ( 2 ) 
+( defun soma ( x y ) ( + x y ) )

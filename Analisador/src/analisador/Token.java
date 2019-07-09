@@ -16,6 +16,11 @@ public class Token {
     String elemento;
     Rotulo rotulo;
 
+    public Token(String elemento, Rotulo rotulo) {
+        this.elemento = elemento;
+        this.rotulo = rotulo;
+    }
+
     public Token(String entrada) {
         int validade = 0;
         switch (entrada) {
@@ -178,6 +183,12 @@ public class Token {
             case "or":
                 this.rotulo = Rotulo.OpBin;
                 this.elemento = "or";
+                validade = 1;
+                break;
+                
+            case "defun":
+                this.rotulo = Rotulo.DecFunc;
+                this.elemento = "defun";
                 validade = 1;
                 break;
 
