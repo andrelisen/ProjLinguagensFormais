@@ -13,6 +13,9 @@ public class AnalisadorSintatico {
         for (int i = 0; i < lista.size(); i++) {
             if (lista.get(i) != null) {
                 Token token = lista.get(i);
+                if (i + 1 != lista.size()) {
+                    Token prox = lista.get(i + 1);
+                }
                 String elemento = token.getElemento();
                 int tamanhoPalavra = elemento.length();
 
@@ -29,10 +32,17 @@ public class AnalisadorSintatico {
 //                            pilha = transicoes2(pilha);
 //                            pilha.imprimir();
 //                        }
+                        pilha = transicoes2a(t, pilha);
+                        pilha.imprimir();
                     }
                 } else {
                     pilha = transicoes1(token, pilha);
                     pilha.imprimir();
+                }
+                pilha = transicoes2a(token, pilha);
+                pilha.imprimir();
+                if (i >= 2 && i != lista.size()) {
+                    pilha = transicoes2b(pilha);
                 }
             }
         }
@@ -316,82 +326,350 @@ public class AnalisadorSintatico {
         return pilha;
     }
 
-//    public Pilha transicoes2(Pilha pilha) {
-//        String elemento = pilha.remover();
+    public Pilha transicoes2a(Token token, Pilha pilha) {
+        Pilha aux = pilha;
+        Token novo;
+        String elemento = token.getElemento();
+
+        switch (elemento) {
+            //digitos
+            case "0":
+                pilha.remover();
+                novo = new Token("digito", Rotulo.Num);
+                pilha.inserir(novo);
+                System.out.println("Transição 2.33");
+                break;
+
+            case "1":
+                pilha.remover();
+                novo = new Token("digito", Rotulo.Num);
+                pilha.inserir(novo);
+                System.out.println("Transição 2.33");
+                break;
+
+            case "2":
+                pilha.remover();
+                novo = new Token("digito", Rotulo.Num);
+                pilha.inserir(novo);
+                System.out.println("Transição 2.33");
+                break;
+
+            case "3":
+                pilha.remover();
+                novo = new Token("digito", Rotulo.Num);
+                pilha.inserir(novo);
+                System.out.println("Transição 2.33");
+                break;
+
+            case "4":
+                pilha.remover();
+                novo = new Token("digito", Rotulo.Num);
+                pilha.inserir(novo);
+                System.out.println("Transição 2.33");
+                break;
+
+            case "5":
+                pilha.remover();
+                novo = new Token("digito", Rotulo.Num);
+                pilha.inserir(novo);
+                System.out.println("Transição 2.33");
+                break;
+
+            case "6":
+                pilha.remover();
+                novo = new Token("digito", Rotulo.Num);
+                pilha.inserir(novo);
+                System.out.println("Transição 2.33");
+                break;
+
+            case "7":
+                pilha.remover();
+                novo = new Token("digito", Rotulo.Num);
+                pilha.inserir(novo);
+                System.out.println("Transição 2.33");
+                break;
+
+            case "8":
+                pilha.remover();
+                novo = new Token("digito", Rotulo.Num);
+                pilha.inserir(novo);
+                System.out.println("Transição 2.33");
+                break;
+
+            case "9":
+                pilha.remover();
+                novo = new Token("digito", Rotulo.Num);
+                pilha.inserir(novo);
+                System.out.println("Transição 2.33");
+                break;
+
+            //letras
+            case "a":
+                pilha.remover();
+                novo = new Token("letra", Rotulo.NomeFunc);
+                pilha.inserir(novo);
+                System.out.println("Transição 2.32");
+                break;
+
+            case "b":
+                pilha.remover();
+                novo = new Token("letra", Rotulo.NomeFunc);
+                pilha.inserir(novo);
+                System.out.println("Transição 2.32");
+                break;
+
+            case "c":
+                pilha.remover();
+                novo = new Token("letra", Rotulo.NomeFunc);
+                pilha.inserir(novo);
+                System.out.println("Transição 2.32");
+                break;
+
+            case "d":
+                pilha.remover();
+                novo = new Token("letra", Rotulo.NomeFunc);
+                pilha.inserir(novo);
+                System.out.println("Transição 2.32");
+                break;
+
+            case "e":
+                pilha.remover();
+                novo = new Token("letra", Rotulo.NomeFunc);
+                pilha.inserir(novo);
+                System.out.println("Transição 2.32");
+                break;
+
+            case "f":
+                pilha.remover();
+                novo = new Token("letra", Rotulo.NomeFunc);
+                pilha.inserir(novo);
+                System.out.println("Transição 2.32");
+                break;
+
+            case "g":
+                pilha.remover();
+                novo = new Token("letra", Rotulo.NomeFunc);
+                pilha.inserir(novo);
+                System.out.println("Transição 2.32");
+                break;
+
+            case "h":
+                pilha.remover();
+                novo = new Token("letra", Rotulo.NomeFunc);
+                pilha.inserir(novo);
+                System.out.println("Transição 2.32");
+                break;
+
+            case "i":
+                pilha.remover();
+                novo = new Token("letra", Rotulo.NomeFunc);
+                pilha.inserir(novo);
+                System.out.println("Transição 2.32");
+                break;
+
+            case "j":
+                pilha.remover();
+                novo = new Token("letra", Rotulo.NomeFunc);
+                pilha.inserir(novo);
+                System.out.println("Transição 2.32");
+                break;
+
+            case "k":
+                pilha.remover();
+                novo = new Token("letra", Rotulo.NomeFunc);
+                pilha.inserir(novo);
+                System.out.println("Transição 2.32");
+                break;
+
+            case "l":
+                pilha.remover();
+                novo = new Token("letra", Rotulo.NomeFunc);
+                pilha.inserir(novo);
+                System.out.println("Transição 2.32");
+                break;
+
+            case "m":
+                pilha.remover();
+                novo = new Token("letra", Rotulo.NomeFunc);
+                pilha.inserir(novo);
+                System.out.println("Transição 2.32");
+                break;
+
+            case "n":
+                pilha.remover();
+                novo = new Token("letra", Rotulo.NomeFunc);
+                pilha.inserir(novo);
+                System.out.println("Transição 2.32");
+                break;
+
+            case "o":
+                pilha.remover();
+                novo = new Token("letra", Rotulo.NomeFunc);
+                pilha.inserir(novo);
+                System.out.println("Transição 2.32");
+                break;
+
+            case "p":
+                pilha.remover();
+                novo = new Token("letra", Rotulo.NomeFunc);
+                pilha.inserir(novo);
+                System.out.println("Transição 2.32");
+                break;
+
+            case "q":
+                pilha.remover();
+                novo = new Token("letra", Rotulo.NomeFunc);
+                pilha.inserir(novo);
+                System.out.println("Transição 2.32");
+                break;
+
+            case "r":
+                pilha.remover();
+                novo = new Token("letra", Rotulo.NomeFunc);
+                pilha.inserir(novo);
+                System.out.println("Transição 2.32");
+                break;
+
+            case "s":
+                pilha.remover();
+                novo = new Token("letra", Rotulo.NomeFunc);
+                pilha.inserir(novo);
+                System.out.println("Transição 2.32");
+                break;
+
+            case "t":
+                pilha.remover();
+                novo = new Token("letra", Rotulo.NomeFunc);
+                pilha.inserir(novo);
+                System.out.println("Transição 2.32");
+                break;
+
+            case "u":
+                pilha.remover();
+                novo = new Token("letra", Rotulo.NomeFunc);
+                pilha.inserir(novo);
+                System.out.println("Transição 2.32");
+                break;
+
+            case "v":
+                pilha.remover();
+                novo = new Token("letra", Rotulo.NomeFunc);
+                pilha.inserir(novo);
+                System.out.println("Transição 2.32");
+                break;
+
+            case "w":
+                pilha.remover();
+                novo = new Token("letra", Rotulo.NomeFunc);
+                pilha.inserir(novo);
+                System.out.println("Transição 2.32");
+                break;
+
+            case "x":
+                pilha.remover();
+                novo = new Token("letra", Rotulo.NomeFunc);
+                pilha.inserir(novo);
+                System.out.println("Transição 2.32");
+                break;
+
+            case "y":
+                pilha.remover();
+                novo = new Token("letra", Rotulo.NomeFunc);
+                pilha.inserir(novo);
+                System.out.println("Transição 2.32");
+                break;
+
+            case "z":
+                pilha.remover();
+                novo = new Token("letra", Rotulo.NomeFunc);
+                pilha.inserir(novo);
+                System.out.println("Transição 2.32");
+                break;
+
+        }
+        return pilha;
+    } //transicoes que modificam numeros e letras na pilha
+
+    public Pilha transicoes2b(Pilha pilha) {
+        Token novo;
+        Pilha aux = pilha;
+        Token token = aux.remover();
+        String elemento = token.getElemento();
+        Token prox = aux.remover();
+
+        switch (elemento) {
+            case "letra":
+                if (prox.getRotulo() == Rotulo.NomeFunc) {
+                    pilha.remover(); //letra
+                    pilha.remover(); //letra
+                    novo = new Token("seqsimb", Rotulo.NomeFunc);
+                    pilha.inserir(novo);
+                    System.out.println("Transição 2.30");
+                } else if (prox.getRotulo() != Rotulo.DecFunc && prox.getRotulo() != Rotulo.DelimDir && prox.getRotulo() != Rotulo.DelimEsq) {
+                    pilha.remover(); //letra
+                    novo = new Token("seqsimb", Rotulo.NomeFunc);
+                    pilha.inserir(novo);
+                    System.out.println("Transição 2.35");
+                }
+                break;
+
+            case "digito":
+                if (prox.getRotulo() == Rotulo.NomeFunc) {
+                    pilha.remover(); //letra
+                    pilha.remover(); //letra
+                    novo = new Token("seqsimb", Rotulo.NomeFunc);
+                    pilha.inserir(novo);
+                    System.out.println("Transição 2.36");
+                } else if (prox.getRotulo() == Rotulo.Num) {
+                    pilha.remover(); //digito
+                    pilha.remover(); //num
+                    novo = new Token("num", Rotulo.Num);
+                    System.out.println("Transição 2.36");
+                    pilha.inserir(novo);
+                } else {
+                    pilha.remover(); //digito
+                    novo = new Token("num", Rotulo.Num);
+                    pilha.inserir(novo);
+                    System.out.println("Transição 2.36");
+                }
+                break;
+            case "seqsimb":
+                pilha.remover(); //seqsimb
+                novo = new Token("id", Rotulo.NomeFunc);
+                pilha.inserir(novo);
+                System.out.println("Transição 2.25");
+                break;
+        }
+
+        pilha.imprimir();
+        return pilha;
+    }
+//    public Pilha transicoes2(Pilha pilha, Token prox) {
 //        Pilha aux = pilha;
+//        Token token = aux.remover();
+//        Token novo;
+//        String elemento = token.getElemento();
+//
 //        switch (elemento) {
 //            case "listaDeFuncoes":
-//                
-//                
-//                
-//                if (aux.remover().equals("funcao")) {
-//                    pilha.inserir("A'");
+//                if (prox.getRotulo() == Rotulo.DelimEsq) { //A' -> listaDeFuncoes
+//                    pilha.remover();
+//                    novo = new Token("A'", Rotulo.NomeFunc);
 //                    System.out.println("Transição 2.3");
 //                } else {
-//                    pilha.inserir("programa");
+//                    pilha.remover();
+//                    novo = new Token("programa", Rotulo.NomeFunc);
 //                    System.out.println("Transição 2.1");
 //                }
 //                break;
 //
-//            case "A'":
-//                if (aux.remover().equals("funcao")) {
-//                    pilha.inserir("listaDeFuncoes");
-//                    System.out.println("Transição 2.2");
-//                }
-//                break;
-//
 //            case ")":
-//                if (aux.remover().equals("corpo")) {
-//                    pilha.remover();//corpo
-//                    if (aux.remover().equals("corpo")) {
-//                        pilha.remover();//corpo
-//                        //)corpo corpo
-//                        pilha.remover(); //cond
-//                        pilha.remover();//if
-//                        pilha.remover();//(
-//                        pilha.inserir("corpo");
-//                        System.out.println("Transição 2.6");
-//                    } else if (aux.remover().equals(")")) {
-//                        pilha.remover();//)
-//                        //)corpo)  
-//                        pilha.remover();//params
-//                        pilha.remover();//(
-//                        pilha.remover();//id
-//                        pilha.remover();//defun
-//                        pilha.remover();//(
-//                        pilha.inserir("funcao");
-//                        System.out.println("Transição 2.5");
-//                    } else {
-//                        //)corpo 
-//                        pilha.remover(); //id
-//                        pilha.remover(); //(
-//                        pilha.inserir("corpo");
-//                        System.out.println("Transição 2.7");
-//                    }
-//                } else if (aux.remover().equals("exp")) {
-//                    pilha.remover(); //exp
-//                    pilha.remover(); //exp
-//                    if (aux.remover().equals("+") || aux.remover().equals("-") || aux.remover().equals("*") || aux.remover().equals("/")) {
-//                        pilha.remover();// + / - * 
-//                        pilha.remover();//(
-//                        pilha.inserir("exp");
-//                        System.out.println("Transição 2.15 - 2.17");
-//                    } else if (aux.remover().equals("gt") || aux.remover().equals("lt") || aux.remover().equals("geq") || aux.remover().equals("leq") || aux.remover().equals("eq")) {
-//                        pilha.remover();// operação
-//                        pilha.remover();//(
-//                        pilha.inserir("cond");
-//                        System.out.println("Transição 2.18 - 2.22");
-//                    }
-//
-//                } else if (aux.remover().equals("cond")) {
-//                    pilha.remover(); //cond
-//                    pilha.remover(); //cond
-//                    if (aux.remover().equals("not") || aux.remover().equals("or")) {
-//                        pilha.remover();// not or
-//                        pilha.remover(); //(
-//                        pilha.inserir("cond");
-//                        System.out.println("Transição 2.23 - 2.24");
-//                    }
+//                if (prox.getRotulo() == Rotulo.TesteCond) {
+//                    //cond
+//                } else if (prox.getRotulo() == Rotulo.OpBin) {
+//                    //exp
+//                } else {
+//                    //corpo
 //
 //                }
 //                break;
@@ -424,224 +702,12 @@ public class AnalisadorSintatico {
 //                System.out.println("2.13");
 //                break;
 //
-//            case "digito":
-//                pilha.inserir("num");
-//                System.out.println("2.37");
-//                break;
-//
-//            case "seqsimb":
-//                if (aux.remover().equals("letra")) {
-//                    if (aux.remover().equals("letra")) {
-//                        pilha.remover();
-//                        pilha.remover();
-//                        pilha.inserir("seqsimb");
-//                        System.out.println("Transição 2.30");
-//                    }
-//                } else if (aux.remover().equals("digito")) {
-//                    pilha.remover();//digito
-//                    pilha.inserir("seqsimb");
-//                    System.out.println("Transição 2.31");
-//                } else {
-//                    pilha.remover();
-//                    // pilha.remover();
-//                    pilha.inserir("id");
-//                    System.out.println("Transição 2.25");
-//                }
-//                break;
-//
 //            case "C'":
 //                if (aux.remover().equals("digito")) {
 //                    pilha.remover();//digito
 //                    pilha.inserir("num");
 //                    System.out.println("Transição 2.26");
 //                }
-//                break;
-//
-//            case "letra": {
-//                pilha.inserir("seqsimb");
-//                System.out.println("Transição ");
-//            }
-//
-//            //digitos
-//            case "0":
-//                pilha.inserir("digito");
-//                System.out.println("Transição 2.33");
-//                break;
-//
-//            case "1":
-//                pilha.inserir("digito");
-//                System.out.println("Transição 2.33");
-//                break;
-//
-//            case "2":
-//                pilha.inserir("digito");
-//                System.out.println("Transição 2.33");
-//                break;
-//
-//            case "3":
-//                pilha.inserir("digito");
-//                System.out.println("Transição 2.33");
-//                break;
-//
-//            case "4":
-//                pilha.inserir("digito");
-//                System.out.println("Transição 2.33");
-//                break;
-//
-//            case "5":
-//                pilha.inserir("digito");
-//                System.out.println("Transição 2.33");
-//                break;
-//
-//            case "6":
-//                pilha.inserir("digito");
-//                System.out.println("Transição 2.33");
-//                break;
-//
-//            case "7":
-//                pilha.inserir("digito");
-//                System.out.println("Transição 2.33");
-//                break;
-//
-//            case "8":
-//                pilha.inserir("digito");
-//                System.out.println("Transição 2.33");
-//                break;
-//
-//            case "9":
-//                pilha.inserir("digito");
-//                System.out.println("Transição 2.33");
-//                break;
-//
-//            //letras
-//            case "a":
-//                pilha.inserir("letra");
-//                System.out.println("Transição 2.32");
-//                break;
-//
-//            case "b":
-//                pilha.inserir("letra");
-//                System.out.println("Transição 2.32");
-//                break;
-//
-//            case "c":
-//                pilha.inserir("letra");
-//                System.out.println("Transição 2.32");
-//                break;
-//
-//            case "d":
-//                pilha.inserir("letra");
-//                System.out.println("Transição 2.32");
-//                break;
-//
-//            case "e":
-//                pilha.inserir("letra");
-//                System.out.println("Transição 2.32");
-//                break;
-//
-//            case "f":
-//                pilha.inserir("letra");
-//                System.out.println("Transição 2.32");
-//                break;
-//
-//            case "g":
-//                pilha.inserir("letra");
-//                System.out.println("Transição 2.32");
-//                break;
-//
-//            case "h":
-//                pilha.inserir("letra");
-//                System.out.println("Transição 2.32");
-//                break;
-//
-//            case "i":
-//                pilha.inserir("letra");
-//                System.out.println("Transição 2.32");
-//                break;
-//
-//            case "j":
-//                pilha.inserir("letra");
-//                System.out.println("Transição 2.32");
-//                break;
-//
-//            case "k":
-//                pilha.inserir("letra");
-//                System.out.println("Transição 2.32");
-//                break;
-//
-//            case "l":
-//                pilha.inserir("letra");
-//                System.out.println("Transição 2.32");
-//                break;
-//
-//            case "m":
-//                pilha.inserir("letra");
-//                System.out.println("Transição 2.32");
-//                break;
-//
-//            case "n":
-//                pilha.inserir("letra");
-//                System.out.println("Transição 2.32");
-//                break;
-//
-//            case "o":
-//                pilha.inserir("letra");
-//                System.out.println("Transição 2.32");
-//                break;
-//
-//            case "p":
-//                pilha.inserir("letra");
-//                System.out.println("Transição 2.32");
-//                break;
-//
-//            case "q":
-//                pilha.inserir("letra");
-//                System.out.println("Transição 2.32");
-//                break;
-//
-//            case "r":
-//                pilha.inserir("letra");
-//                System.out.println("Transição 2.32");
-//                break;
-//
-//            case "s":
-//                pilha.inserir("letra");
-//                System.out.println("Transição 2.32");
-//                break;
-//
-//            case "t":
-//                pilha.inserir("letra");
-//                System.out.println("Transição 2.32");
-//                break;
-//
-//            case "u":
-//                pilha.inserir("letra");
-//                System.out.println("Transição 2.32");
-//                break;
-//
-//            case "v":
-//                pilha.inserir("letra");
-//                System.out.println("Transição 2.32");
-//                break;
-//
-//            case "w":
-//                pilha.inserir("letra");
-//                System.out.println("Transição 2.32");
-//                break;
-//
-//            case "x":
-//                pilha.inserir("letra");
-//                System.out.println("Transição 2.32");
-//                break;
-//
-//            case "y":
-//                pilha.inserir("letra");
-//                System.out.println("Transição 2.32");
-//                break;
-//
-//            case "z":
-//                pilha.inserir("letra");
-//                System.out.println("Transição 2.32");
 //                break;
 //
 //            default:
@@ -653,5 +719,4 @@ public class AnalisadorSintatico {
 //
 //        return pilha;
 //    }
-
 }

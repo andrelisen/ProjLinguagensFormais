@@ -110,7 +110,7 @@ public class Token {
 
             case "--":
                 this.rotulo = Rotulo.OpUn;
-                this.elemento = "++";
+                this.elemento = "--";
                 validade = 1;
                 break;
 

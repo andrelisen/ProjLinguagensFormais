@@ -11,6 +11,6 @@ package analisador;
  */
 public enum Rotulo {
     
-    DelimEsq, DelimDir, OpUn, OpBin, TesteCond, NomeFunc, Num, DecFunc; //declaração de função
+    DelimEsq, DelimDir, OpUn, OpBin, TesteCond, NomeFunc, Num, DecFunc; //DecFun = declaração de função
     
 }
